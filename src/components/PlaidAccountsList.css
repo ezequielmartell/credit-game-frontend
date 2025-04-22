@@ -1,0 +1,122 @@
+.plaid-accounts-list {
+  padding: 20px;
+  max-width: 2400px;
+  margin: 0 auto;
+}
+
+.plaid-accounts-list h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.accounts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.account-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  color: #000;
+}
+
+.account-card h3 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
+
+.account-card .institution {
+  color: #000;
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.account-card .balance {
+  font-size: 1.125rem;
+  color: #000;
+  margin: 10px 0;
+}
+
+.account-card .credit-limit {
+  font-size: 1.125rem;
+  color: #000;
+  margin: 10px 0;
+}
+
+.account-card .aprs {
+  margin: 15px 0;
+}
+
+.account-card .aprs h4 {
+  color: #000;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.account-card .apr-item {
+  margin: 5px 0;
+  color: #000;
+}
+
+.account-card .apr-type {
+  text-transform: capitalize;
+  font-size: 0.875rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.account-card .apr-percentage {
+  font-size: 0.875rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.account-card .apr-balance {
+  font-size: 0.875rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.account-card .payment-info {
+  margin: 15px 0;
+  color: #000;
+}
+
+.account-card .next-payment,
+.account-card .minimum-payment {
+  margin: 5px 0;
+}
+
+.account-card .official-name {
+  color: #000;
+  font-size: 0.875rem;
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+
+.connection-data {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.connection-data h4 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+}
+
+.connection-data pre {
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 14px;
+  margin: 0;
+} 

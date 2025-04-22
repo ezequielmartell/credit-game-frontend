@@ -35,7 +35,7 @@ export function login(e, email, password, setIsAuthenticated, setEmail, setPassw
     })
         .then(isResponseOk)
         .then((data) => {
-            console.log(data);
+            // console.log(data);
             setIsAuthenticated(true)
             setEmail('')
             setPassword('')
@@ -53,9 +53,10 @@ export function login(e, email, password, setIsAuthenticated, setEmail, setPassw
         })
 }
 
-const logout = (setAuthTokens) => {
+export const logout = (setIsAuthenticated, setAuthTokens) => {
     console.log('logging out')
     setAuthTokens(null);
+    setIsAuthenticated(false);
     localStorage.removeItem('authTokens');
     window.location.reload();
 };
@@ -90,12 +91,12 @@ const refreshToken = async (refreshToken, setAuthTokens) => {
         })
 };
 
-export const updateToken = async (authTokens, setAuthTokens) => {
+export const updateToken = async (authTokens, setIsAuthenticated, setAuthTokens) => {
     // console.log('updating token', authTokens)
     // const authTokens = JSON.parse(localStorage.getItem('authTokens'));
     if (!authTokens?.refresh) {
         console.log('no refresh token', authTokens)
-        logout(setAuthTokens);
+        logout(setIsAuthenticated, setAuthTokens);
         return;
     }
     const newTokens = await refreshToken(authTokens.refresh, setAuthTokens);
@@ -104,7 +105,7 @@ export const updateToken = async (authTokens, setAuthTokens) => {
         setAuthTokens(newTokens);
         localStorage.setItem('authTokens', JSON.stringify(newTokens));
     } else {
-        logout(setAuthTokens);
+        logout(setIsAuthenticated, setAuthTokens);
     }
 };
 

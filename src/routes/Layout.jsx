@@ -1,20 +1,30 @@
 import { Outlet, Link } from "react-router-dom";
-// import { LargeMenu } from "../components/LargeMenus";
-// import { SmallMenu } from "../components/SmallMenu";
+import { useContext } from "react";
+import { Context } from '../utils/Context';
+import Button from "../components/Button";
+import { logout } from '../utils/Utils';
+import PlaidLinkComponent from "../components/PlaidLinkComponent";
+import ManualAccountForm from "../components/ManualAccountForm";
+
 
 function Layout() {
+  const { authTokens, setAuthTokens } = useContext(Context);
+  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+
+  let loggedinnavbuttons;
+  if (isAuthenticated) {
+    loggedinnavbuttons = (
+      <>
+        <PlaidLinkComponent/>
+        <ManualAccountForm />
+        <Button onClick={() => logout(setAuthTokens, setIsAuthenticated)} variant="danger">Logout</Button>
+      </>
+    )
+  }
   return (
     <>
       <nav>
-        <ul>
-          {/* if isAuthenticated ? large menu : small menu */}
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/me">Me</Link>
-          </li>        
-        </ul>
+        {loggedinnavbuttons}
       </nav>
 
       <Outlet />

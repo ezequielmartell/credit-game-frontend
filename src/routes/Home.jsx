@@ -1,6 +1,9 @@
 import { useEffect, useContext } from "react";
 import { useLocation, Navigate, useNavigate, Link } from "react-router-dom";
 
+import { Context } from '../utils/Context';
+import PlaidAccountsList from '../components/PlaidAccountsList';
+
 // import Cookies from "universal-cookie"
 // const cookies = new Cookies();
 
@@ -16,11 +19,22 @@ import { useLocation, Navigate, useNavigate, Link } from "react-router-dom";
 // const url = import.meta.env.VITE_APP_URL
 
 
-function Home() {
-  return <div/>
-};
 // function Home() {
-//   return (
+//   return <div/>
+// };
+
+//  if isAuthencticated, add button to add new accountt o layout maybe or new menu under layout
+
+function Home() {
+  return (
+    <div>
+      <h1>Credit Game Service Home</h1>
+      <PlaidAccountsList />
+    </div>
+  )
+};
+
+export default Home;
 //     <div>
 //       <h1>Spotify Artist Boycotting Service Home</h1>
 //       <div className="home-group">
@@ -37,8 +51,4 @@ function Home() {
 //       <BoycottListComponent />
 //     </div>
 //     </div>
-//     </div>
-//   )
-// };
 
-export default Home;

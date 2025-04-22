@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.2",
+    "classnames": "^2.5.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-plaid-link": "^3.6.1",

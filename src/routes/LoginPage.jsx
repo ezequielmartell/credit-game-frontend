@@ -4,7 +4,6 @@ import { Context } from '../utils/Context';
 import { signup, login } from '../utils/Utils';
 import Home from "./Home";
 
-const url = import.meta.env.VITE_APP_URL
 
 function LoginPage() {
     const { password, setPassword } = useContext(Context);
@@ -31,8 +30,8 @@ function LoginPage() {
 
     return (
         <div>
-            <h1>Spotify Artist Boycotting Service</h1>
-            <h2>Login</h2>
+            <h1>Credit Gaming Service</h1>
+            {/* <h2>Login</h2> */}
             <h3>Please log in to continue</h3>
             <h4>Or sign up below </h4>
             <form>
